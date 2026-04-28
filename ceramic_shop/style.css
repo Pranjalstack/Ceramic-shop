@@ -1,0 +1,69 @@
+/* --- PRODUCT GRID LAYOUT --- */
+.product-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many cards as possible */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- THE CARD --- */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* This keeps the image corners rounded */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Lifts the card when you hover */
+}
+
+/* --- THE IMAGE (THE FIX) --- */
+.product-card img {
+    width: 100%;           /* Fills card width */
+    height: 250px;         /* Uniform height for all items */
+    object-fit: cover;     /* Crops nicely without stretching */
+    display: block;
+}
+
+/* --- TEXT & BUTTONS --- */
+.product-card h3 {
+    margin: 15px 0 5px;
+    color: #4e342e;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8d6e63;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: #8d6e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 20px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #6d4c41;
+}
+/* FORCE images to stay inside the cards */
+.product-grid .product-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
